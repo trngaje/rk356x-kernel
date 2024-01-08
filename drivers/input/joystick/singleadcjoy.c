@@ -638,8 +638,6 @@ static void joypad_adc_check(struct input_polled_dev *poll_dev)
 			}
 		}
 
-		adc->value = abs(adc->value) < 16 ? 0 : adc->value;
-
 		/* adc data tuning */
 		if (adcx->tuning_n && adcx->value < 0)
 			adcx->value = ADC_DATA_TUNING(adcx->value, adcx->tuning_n);
